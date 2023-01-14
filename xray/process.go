@@ -162,7 +162,7 @@ func (p *process) Start() (err error) {
 		return common.NewErrorf("写入配置文件失败: %v", err)
 	}
 
-	cmd := exec.Command(GetBinaryPath(), "-c", configPath, "-restrictedIPsPath", "./bin/blockedIPs")
+	cmd := exec.Command(GetBinaryPath(), "-c", configPath)
 	p.cmd = cmd
 
 	stdReader, err := cmd.StdoutPipe()
